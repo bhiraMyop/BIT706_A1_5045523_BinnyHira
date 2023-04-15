@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace BIT706_A1_5045523_BinnyHira
 {
-    internal class Person
+    internal abstract class APerson
     {
         private int personID;
-        public int idCounter = 1;
+        //private int idCounter = 1;
         private string name;
         private string contactNo;
         private string address;
@@ -20,22 +20,22 @@ namespace BIT706_A1_5045523_BinnyHira
         public string Address { get => address; set => address = value; }
         
 
-        public Person()
+        public APerson()
         {
-            PersonID = idCounter;
-            idCounter++;
+           // PersonID = idCounter;
+           // idCounter++;
         }
-        public Person(string name) : this()
+        public APerson(string name) : this()
         {
             Name = name;
         }
 
-        public Person(string name,  string contactNo) : this(name)
+        public APerson(string name,  string contactNo) : this(name)
         {
             Name = name;
             ContactNo = contactNo;
         }
-        public Person(string name, string contactNo, string address) : this(name, contactNo)
+        public APerson(string name, string contactNo, string address) : this(name, contactNo)
         {
             Name = name;
             ContactNo = contactNo;

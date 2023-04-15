@@ -6,15 +6,23 @@ using System.Threading.Tasks;
 
 namespace BIT706_A1_5045523_BinnyHira
 {
-    internal class Customer : Person
+    internal class Customer : APerson
     {
-        public int customerIDCounter = 1;
-        public int customerID;
-        public Accounts[Object];
+        //ID is inherited from Person Class
+        //public int customerIDCounter = 1;
+        //public int customerID;
+        private Accounts[Object];
 
+        public Customer()
+        {
+            //customerID = customerIDCounter;
+            //customerIDCounter++;
+        }
 
-            // Methods
-            // Deposit
+        // Methods
+        public void withdrawl(){ }
+        // Deposit
+        public void deposit(){ }
             // Withdrawal
     }
 }
