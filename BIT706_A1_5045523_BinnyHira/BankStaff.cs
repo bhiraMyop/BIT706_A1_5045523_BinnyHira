@@ -19,13 +19,7 @@ namespace BIT706_A1_5045523_BinnyHira
         internal Customer IsCustomer { get => isCustomer; set => isCustomer = value; }
 
         // Constructors
-        public BankStaff()
-        {
-            // bankStaffID = bankIDCounter;
-            // bankIDCounter++;
-        }
-
-        public BankStaff(Customer isCustomer) : this() 
+        public BankStaff(string name, string contactNo, string address, Customer isCustomer) : base(name, contactNo, address) 
         {
             IsCustomer = isCustomer;
         }
