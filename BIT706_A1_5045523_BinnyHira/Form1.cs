@@ -16,5 +16,14 @@ namespace BIT706_A1_5045523_BinnyHira
         {
             InitializeComponent();
         }
+
+        private void btnPlay_Click(object sender, EventArgs e)
+        {
+            /// Try the code here
+            /// 
+
+
+
+        }
     }
 }
