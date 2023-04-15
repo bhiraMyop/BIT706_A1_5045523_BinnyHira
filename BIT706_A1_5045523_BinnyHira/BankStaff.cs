@@ -15,12 +15,14 @@ namespace BIT706_A1_5045523_BinnyHira
         private Customer isCustomer;
 
        // public int BankStaffID { get => bankStaffID; set => bankStaffID = value; }
+       //Getter and Setters
         internal Customer IsCustomer { get => isCustomer; set => isCustomer = value; }
 
+        // Constructors
         public BankStaff()
         {
-       //     bankStaffID = bankIDCounter;
-       //     bankIDCounter++;
+            // bankStaffID = bankIDCounter;
+            // bankIDCounter++;
         }
 
         public BankStaff(Customer isCustomer) : this() 
