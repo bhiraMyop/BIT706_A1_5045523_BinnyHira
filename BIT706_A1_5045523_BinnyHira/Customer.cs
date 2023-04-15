@@ -12,7 +12,9 @@ namespace BIT706_A1_5045523_BinnyHira
         //public int customerIDCounter = 1;
         //public int customerID;
         private Accounts[Object];
-
+           
+        // Getter and Setter
+        // Constructors
         public Customer()
         {
             //customerID = customerIDCounter;
@@ -21,8 +23,8 @@ namespace BIT706_A1_5045523_BinnyHira
 
         // Methods
         public void withdrawl(){ }
-        // Deposit
+        // Deposit Method
         public void deposit(){ }
-            // Withdrawal
+        // Withdrawal Method
     }
 }

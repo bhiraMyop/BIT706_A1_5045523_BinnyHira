@@ -6,35 +6,56 @@ using System.Threading.Tasks;
 
 namespace BIT706_A1_5045523_BinnyHira
 {
-    internal class EverydayAccount : IAccounts
+    internal class InvestmentAccount : IAccounts
     {
         private int accountNo;
         private int everydayAccCounter = 1;
         private double balance;
+        private double failedFee = 0.0; //in percentage 0.0%
+        private double interestRate = 0.0; //in percentage 0.0%
         private int overdraft = 0;
+
         // Getter and Setter
         public int AccountNo { get => accountNo; set => accountNo = value; }
         public double Balance { get => balance; set => balance = value; }
+        public double FailedFee { get => failedFee; set => failedFee = value; }
+        public double InterestRate { get => interestRate; set => interestRate = value; }
         internal int Overdraft { get => overdraft; } // no need for setter as the account is not allowed Overdraft and the default value is set to 0.
-        
+
         // Constructors
-        public EverydayAccount()
+        public InvestmentAccount()
         {
             AccountNo = everydayAccCounter;
             everydayAccCounter++;
+
+            // Set failed fee
+            // FailedFee fee is the same for all accounts
+            FailedFee = 10.00;
         }
 
-        public EverydayAccount(double balance) : this()
+        public InvestmentAccount(double balance) : this()
         {
             Balance = balance;
         }
+        /*
+        public InvestmentAccount(double balance, double failedFee) : this(balance)
+        {
+            FailedFee = failedFee;
+        }*/
+
+        public InvestmentAccount(double balance, double interestRate) : this(balance) // intrest rate is set at account creation
+        {
+            InterestRate = interestRate;
+        }
+
 
         // Methods
+        // Deposit Method
         public void deposit()
         {
             throw new NotImplementedException();
         }
-
+        // Withdrawal Method
         public void withdrawl()
         {
             throw new NotImplementedException();
