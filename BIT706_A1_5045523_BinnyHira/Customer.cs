@@ -10,24 +10,18 @@ namespace BIT706_A1_5045523_BinnyHira
 {
     internal class Customer : APerson
     {
-        //ID is inherited from Person Class
-        //public int customerIDCounter = 1;
-        //public int customerID;
-        private List<IAccounts> customerAccounts;
+        private List<Object> customerAccounts;
 
         //Getter and Setter
-        internal List<IAccounts> CustomerAccounts { get => customerAccounts; set => customerAccounts = value; }
+        internal List<Object> CustomerAccounts { get => customerAccounts; set => customerAccounts = value; }
 
-        // Getter and Setter
         // Constructors
-        public Customer(string name, string contactNo, string address, List<IAccounts> customerAccounts) : base(name, contactNo, address)
+        // constructor for new customer
+        public Customer(string name, string contactNo, string address, List<Object> customerAccounts) : base(name, contactNo, address)
         {
-            this.customerAccounts = customerAccounts;
+            CustomerAccounts = customerAccounts;
         }
         // Methods
-        public void withdrawl(){ }
-        // Deposit Method
-        public void deposit(){ }
-        // Withdrawal Method
+
     }
 }
