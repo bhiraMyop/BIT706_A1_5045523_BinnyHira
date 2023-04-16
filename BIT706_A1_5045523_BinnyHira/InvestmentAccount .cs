@@ -18,7 +18,10 @@ namespace BIT706_A1_5045523_BinnyHira
         // Methods
         public override void deposit(double depositAmount)
         {
-            Balance += depositAmount;
+            if (depositAmount > 0)
+            {
+                Balance += depositAmount;
+            }
         }
 
 

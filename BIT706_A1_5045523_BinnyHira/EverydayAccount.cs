@@ -15,7 +15,10 @@ namespace BIT706_A1_5045523_BinnyHira
         // Methods
         public override void deposit(double depositAmount)
         {
-            Balance += depositAmount;
+            if (depositAmount > 0)
+            {
+                Balance += depositAmount;
+            }
         }
 
         public override string withdrawl()
@@ -23,7 +26,6 @@ namespace BIT706_A1_5045523_BinnyHira
             return "";
         }
 
-        /*
         public override string ToString()
         {
             return ($"Account Type = Everyday Account " +
@@ -33,12 +35,6 @@ namespace BIT706_A1_5045523_BinnyHira
                 $"\nInterestRate = {InterestRate.ToString()} " +
                 $"\nOverdraft Allowed = {Overdraft.ToString()} " +
                 $"\nCustomers Details {Customer.Name}");
-        }
-        */
-        public override string ToString()
-        {
-            return ($"Account Type = Everyday Account " +
-                $"\nCustomers Details {Customer.Name} {Customer.Address}");
         }
     }
 }

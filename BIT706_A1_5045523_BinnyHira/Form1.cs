@@ -43,15 +43,18 @@ namespace BIT706_A1_5045523_BinnyHira
             EverydayAccount acc4 = new EverydayAccount(cust3);
             InvestmentAccount acc5 = new InvestmentAccount(3.99, cust4);
             OmniAccount acc6 = new OmniAccount(4.99, cust5);
+
+
+            acc1.deposit(100);
+            acc2.deposit(200);
+            acc3.deposit(-300);
+
             textOutput.Items.Add(acc1.ToString());
             textOutput.Items.Add(acc2.ToString());
             textOutput.Items.Add(acc3.ToString());
             textOutput.Items.Add(acc4.ToString());
             textOutput.Items.Add(acc5.ToString());
             textOutput.Items.Add(acc6.ToString());
-
-
-
 
         }
     }
