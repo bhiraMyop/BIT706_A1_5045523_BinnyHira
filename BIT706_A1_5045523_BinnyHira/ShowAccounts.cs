@@ -36,7 +36,6 @@ namespace BIT706_A1_5045523_BinnyHira
                 {
                     lstAccounts.Items.Add(acc.AccountNo.ToString());
                 }
-                else { lstAccounts.Items.Add("No Accounts found"); }
             }
             
             //Select the first item
