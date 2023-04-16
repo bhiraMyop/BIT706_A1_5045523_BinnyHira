@@ -30,7 +30,7 @@
         {
             this.lstAccounts = new System.Windows.Forms.ListBox();
             this.customerLabel = new System.Windows.Forms.Label();
-            this.lblAccInfo = new System.Windows.Forms.Label();
+            this.lstAccInfo = new System.Windows.Forms.Label();
             this.btnGetAccount = new System.Windows.Forms.Button();
             this.btnRefresh2 = new System.Windows.Forms.Button();
             this.showCustomers = new System.Windows.Forms.Button();
@@ -62,15 +62,15 @@
             this.customerLabel.TabIndex = 6;
             this.customerLabel.Text = "Customer Details";
             // 
-            // lblAccInfo
+            // lstAccInfo
             // 
-            this.lblAccInfo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblAccInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAccInfo.Location = new System.Drawing.Point(29, 221);
-            this.lblAccInfo.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.lblAccInfo.Name = "lblAccInfo";
-            this.lblAccInfo.Size = new System.Drawing.Size(431, 81);
-            this.lblAccInfo.TabIndex = 8;
+            this.lstAccInfo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lstAccInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lstAccInfo.Location = new System.Drawing.Point(29, 221);
+            this.lstAccInfo.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.lstAccInfo.Name = "lstAccInfo";
+            this.lstAccInfo.Size = new System.Drawing.Size(431, 81);
+            this.lstAccInfo.TabIndex = 8;
             // 
             // btnGetAccount
             // 
@@ -82,6 +82,7 @@
             this.btnGetAccount.TabIndex = 9;
             this.btnGetAccount.Text = "Select Account";
             this.btnGetAccount.UseVisualStyleBackColor = true;
+            this.btnGetAccount.Click += new System.EventHandler(this.btnGetAccount_Click);
             // 
             // btnRefresh2
             // 
@@ -93,6 +94,7 @@
             this.btnRefresh2.TabIndex = 10;
             this.btnRefresh2.Text = "Refresh Display";
             this.btnRefresh2.UseVisualStyleBackColor = true;
+            this.btnRefresh2.Click += new System.EventHandler(this.btnRefresh2_Click);
             // 
             // showCustomers
             // 
@@ -149,7 +151,7 @@
             this.Controls.Add(this.showCustomers);
             this.Controls.Add(this.btnRefresh2);
             this.Controls.Add(this.btnGetAccount);
-            this.Controls.Add(this.lblAccInfo);
+            this.Controls.Add(this.lstAccInfo);
             this.Controls.Add(this.customerLabel);
             this.Controls.Add(this.lstAccounts);
             this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
@@ -164,7 +166,7 @@
 
         private System.Windows.Forms.ListBox lstAccounts;
         private System.Windows.Forms.Label customerLabel;
-        private System.Windows.Forms.Label lblAccInfo;
+        private System.Windows.Forms.Label lstAccInfo;
         private System.Windows.Forms.Button btnGetAccount;
         private System.Windows.Forms.Button btnRefresh2;
         private System.Windows.Forms.Button showCustomers;

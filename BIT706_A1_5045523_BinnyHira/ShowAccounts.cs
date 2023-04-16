@@ -34,12 +34,25 @@ namespace BIT706_A1_5045523_BinnyHira
             {
                 if (acc.Customer.PersonID == SelectedCust.PersonID)
                 {
-                    lstAccounts.Items.Add(acc.AccountNo.ToString());
+                    lstAccounts.Items.Add(acc);
                 }
             }
             
             //Select the first item
             lstAccounts.SelectedIndex = 0;
+        }
+
+        private void btnGetAccount_Click(object sender, EventArgs e)
+        {
+            SelectedAcc = (AAccounts)lstAccounts.SelectedItem;
+            lstAccInfo.Text = SelectedAcc.ToString();
+        }
+
+        private void btnRefresh2_Click(object sender, EventArgs e)
+        {
+            DisplayCustomersAccounts();
+            SelectedAcc = null;
+            lstAccInfo.Text = "";
         }
     }
 }
