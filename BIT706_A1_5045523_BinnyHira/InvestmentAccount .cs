@@ -9,17 +9,18 @@ namespace BIT706_A1_5045523_BinnyHira
     internal class InvestmentAccount : AAccounts
     {
         // Constructors
-        public InvestmentAccount(double interestRate) : base(interestRate) 
+        public InvestmentAccount(double interestRate, Customer customer) : base(interestRate, customer) 
         {//intreset rate is set at account creation
             //Failed fee is standard $10.00
 
         }
 
         // Methods
-        public override string deposit()
+        public override void deposit(double depositAmount)
         {
-            return "";
+            Balance += depositAmount;
         }
+
 
         public override string withdrawl()
         {

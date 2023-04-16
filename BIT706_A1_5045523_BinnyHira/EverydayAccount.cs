@@ -9,13 +9,13 @@ namespace BIT706_A1_5045523_BinnyHira
     internal class EverydayAccount : AAccounts
     {
         // Constructors
-        public EverydayAccount() : base() { }
+        public EverydayAccount(Customer customer) : base(customer) { }
 
 
         // Methods
-        public override string deposit()
+        public override void deposit(double depositAmount)
         {
-            return "";
+            Balance += depositAmount;
         }
 
         public override string withdrawl()
@@ -23,6 +23,7 @@ namespace BIT706_A1_5045523_BinnyHira
             return "";
         }
 
+        /*
         public override string ToString()
         {
             return ($"Account Type = Everyday Account " +
@@ -30,8 +31,14 @@ namespace BIT706_A1_5045523_BinnyHira
                 $"\nBalance = ${Balance.ToString()} " +
                 $"\nFailedFee = {FailedFee.ToString()} " +
                 $"\nInterestRate = {InterestRate.ToString()} " +
-                $"\nOverdraft Allowed = {Overdraft.ToString()} ");
+                $"\nOverdraft Allowed = {Overdraft.ToString()} " +
+                $"\nCustomers Details {Customer.Name}");
         }
-
+        */
+        public override string ToString()
+        {
+            return ($"Account Type = Everyday Account " +
+                $"\nCustomers Details {Customer.Name} {Customer.Address}");
+        }
     }
 }
