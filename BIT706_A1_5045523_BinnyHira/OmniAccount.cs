@@ -7,59 +7,36 @@ using System.Windows.Forms.VisualStyles;
 
 namespace BIT706_A1_5045523_BinnyHira
 {
-    internal class OmniAccount : IAccounts
+    internal class OmniAccount : AAccounts
     {
-        private int accountNo;
-        private int everydayAccCounter = 1;
-        private double balance;
-        private double failedFee = 0.0; //in percentage 0.0%
-        private double interestRate = 0.0; //in percentage 0.0%
-        private int overdraft = 0;
-
-        // Getter and Setter
-        public int AccountNo { get => accountNo; set => accountNo = value; }
-        public double Balance { get => balance; set => balance = value; }
-        public double FailedFee { get => failedFee; set => failedFee = value; }
-        public double InterestRate { get => interestRate; set => interestRate = value; }
-        internal int Overdraft { get => overdraft; } // no need for setter as the account is not allowed Overdraft and the default value is set to 0.
-
         // Constructors
-        public OmniAccount()
+        public OmniAccount(double interestRate) : base(interestRate)
         {
-            AccountNo = everydayAccCounter;
-            everydayAccCounter++;
-            
-            // Set failed fee
-            // FailedFee fee is the same for all accounts
-            FailedFee = 10.00;
-        }
-
-        public OmniAccount(double balance) : this()
-        {
-            Balance = balance;
-        }
-        /*
-        public InvestmentAccount(double balance, double failedFee) : this(balance)
-        {
-            FailedFee = failedFee;
-        }*/
-
-        public OmniAccount(double balance, double interestRate) : this(balance) // intrest rate is set at account creation
-        {
-            InterestRate = interestRate;
+            //intreset rate is set at account creation
+            //Failed fee is standard $10.00
+            Overdraft = (int)OverdraftAllowed.Yes;
         }
 
 
         // Methods
-        // Deposit Method
-        public void deposit()
+        public override string deposit()
         {
-            throw new NotImplementedException();
+            return "";
         }
-        // Withdrawal Method
-        public void withdrawl()
+
+        public override string withdrawl()
         {
-            throw new NotImplementedException();
+            return "";
         }
+        public override string ToString()
+        {
+            return ($"Account Type = Omni Account " +
+                $"\nAccountNo =  {AccountNo.ToString()} " +
+                $"\nBalance = ${Balance.ToString()} " +
+                $"\nFailedFee = {FailedFee.ToString()} " +
+                $"\nInterestRate = {InterestRate.ToString()} " +
+                $"\nOverdraft Allowed = {Overdraft.ToString()} ");
+        }
+
     }
 }

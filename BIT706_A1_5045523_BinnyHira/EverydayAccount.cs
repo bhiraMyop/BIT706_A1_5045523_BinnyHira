@@ -6,38 +6,32 @@ using System.Threading.Tasks;
 
 namespace BIT706_A1_5045523_BinnyHira
 {
-    internal class EverydayAccount : IAccounts
+    internal class EverydayAccount : AAccounts
     {
-        private int accountNo;
-        private int everydayAccCounter = 1;
-        private double balance;
-        private int overdraft = 0;
-        // Getter and Setter
-        public int AccountNo { get => accountNo; set => accountNo = value; }
-        public double Balance { get => balance; set => balance = value; }
-        internal int Overdraft { get => overdraft; } // no need for setter as the account is not allowed Overdraft and the default value is set to 0.
-        
         // Constructors
-        public EverydayAccount()
-        {
-            AccountNo = everydayAccCounter;
-            everydayAccCounter++;
-        }
+        public EverydayAccount() : base() { }
 
-        public EverydayAccount(double balance) : this()
-        {
-            Balance = balance;
-        }
 
         // Methods
-        public void deposit()
+        public override string deposit()
         {
-            throw new NotImplementedException();
+            return "";
         }
 
-        public void withdrawl()
+        public override string withdrawl()
         {
-            throw new NotImplementedException();
+            return "";
         }
+
+        public override string ToString()
+        {
+            return ($"Account Type = Everyday Account " +
+                $"\nAccountNo =  {AccountNo.ToString()} " +
+                $"\nBalance = ${Balance.ToString()} " +
+                $"\nFailedFee = {FailedFee.ToString()} " +
+                $"\nInterestRate = {InterestRate.ToString()} " +
+                $"\nOverdraft Allowed = {Overdraft.ToString()} ");
+        }
+
     }
 }

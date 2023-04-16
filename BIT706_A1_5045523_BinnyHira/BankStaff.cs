@@ -9,23 +9,20 @@ namespace BIT706_A1_5045523_BinnyHira
 {
     internal class BankStaff : APerson
     {
-       //ID is inherited from Person Class
-       // public int bankIDCounter = 1;
-       //private int bankStaffID;
         private Customer isCustomer;
 
-       // public int BankStaffID { get => bankStaffID; set => bankStaffID = value; }
        //Getter and Setters
         internal Customer IsCustomer { get => isCustomer; set => isCustomer = value; }
 
         // Constructors
-        public BankStaff(string name, string contactNo, string address, Customer isCustomer) : base(name, contactNo, address) 
+        public BankStaff(string name, string contactNo, string address) : base(name, contactNo, address)
         {
+           // Default constructor for Banks staff only.
+        }
+        public BankStaff(string name, string contactNo, string address, Customer isCustomer) : base(name, contactNo, address) 
+        { //Constructor for when the staff is also a customer. 
             IsCustomer = isCustomer;
         }
-
-
-
 
     }
 }
