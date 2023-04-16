@@ -32,6 +32,7 @@
             this.lstCustomers = new System.Windows.Forms.ListBox();
             this.btnRefresh = new System.Windows.Forms.Button();
             this.lblInfo = new System.Windows.Forms.Label();
+            this.openAccountsButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnGetCustomer
@@ -76,11 +77,23 @@
             this.lblInfo.Size = new System.Drawing.Size(236, 45);
             this.lblInfo.TabIndex = 7;
             // 
+            // openAccountsButton
+            // 
+            this.openAccountsButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.openAccountsButton.Location = new System.Drawing.Point(29, 300);
+            this.openAccountsButton.Name = "openAccountsButton";
+            this.openAccountsButton.Size = new System.Drawing.Size(236, 45);
+            this.openAccountsButton.TabIndex = 8;
+            this.openAccountsButton.Text = "Open Accounts";
+            this.openAccountsButton.UseVisualStyleBackColor = true;
+            this.openAccountsButton.Click += new System.EventHandler(this.openAccountsButton_Click);
+            // 
             // StartForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.openAccountsButton);
             this.Controls.Add(this.lblInfo);
             this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.lstCustomers);
@@ -97,5 +110,6 @@
         private System.Windows.Forms.ListBox lstCustomers;
         private System.Windows.Forms.Button btnRefresh;
         private System.Windows.Forms.Label lblInfo;
+        private System.Windows.Forms.Button openAccountsButton;
     }
 }

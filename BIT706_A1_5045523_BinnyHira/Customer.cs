@@ -19,6 +19,9 @@ namespace BIT706_A1_5045523_BinnyHira
 
         // Constructors
         // constructor for new customer
+
+        public Customer() { }
+
         public Customer(string name, string contactNo, string address) : base(name, contactNo, address)
         {
         }

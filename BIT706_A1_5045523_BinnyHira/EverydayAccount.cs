@@ -38,13 +38,13 @@ namespace BIT706_A1_5045523_BinnyHira
 
         public override string ToString()
         {
-            return ($"Account Type = Everyday Account " +
+            string str = $"Account Type = Everyday Account " +
                 $"\nAccountNo =  {AccountNo.ToString()} " +
                 $"\nBalance = ${Balance.ToString()} " +
                 $"\nFailedFee = {FailedFee.ToString()} " +
                 $"\nInterestRate = {InterestRate.ToString()} " +
-                $"\nOverdraft Allowed = {Overdraft.ToString()} " +
-                $"\nCustomers Details {Customer.Name} {Customer.CustomerAccounts.ToString()}" );
+                $"\nOverdraft Allowed = {Overdraft.ToString()}";
+            return str;
         }
     }
 }
