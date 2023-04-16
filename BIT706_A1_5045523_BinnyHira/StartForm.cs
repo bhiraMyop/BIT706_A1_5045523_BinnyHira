@@ -4,18 +4,23 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace BIT706_A1_5045523_BinnyHira
 {
-    public partial class StartForm : Form
+    public partial class StartForm : ParentForm
     {
+        /*
         //List of all customers
-        List<Customer> allcustomers = new List<Customer>();
-        List<AAccounts> allAccounts = new List<AAccounts>();
+        private List<Customer> allcustomers = new List<Customer>();
+        private List<AAccounts> allAccounts = new List<AAccounts>();
 
+        internal List<Customer> Allcustomers { get => allcustomers; set => allcustomers = value; }
+        internal List<AAccounts> AllAccounts { get => allAccounts; set => allAccounts = value; }
+        */
         public StartForm()
         {
             InitializeComponent();
@@ -33,12 +38,12 @@ namespace BIT706_A1_5045523_BinnyHira
             Customer cust5 = new Customer("cust5", "0210616165", "5 Roada street, Auckland");
             Customer cust6 = new Customer(staff1);
 
-            allcustomers.Add(cust1);
-            allcustomers.Add(cust2);
-            allcustomers.Add(cust3);
-            allcustomers.Add(cust4);
-            allcustomers.Add(cust5);
-            allcustomers.Add(cust6);
+            Allcustomers.Add(cust1);
+            Allcustomers.Add(cust2);
+            Allcustomers.Add(cust3);
+            Allcustomers.Add(cust4);
+            Allcustomers.Add(cust5);
+            Allcustomers.Add(cust6);
 
             EverydayAccount acc1 = new EverydayAccount(cust1);
             InvestmentAccount acc2 = new InvestmentAccount(3.99, cust2);
@@ -49,12 +54,12 @@ namespace BIT706_A1_5045523_BinnyHira
 
             //add all accounts to list of accounts
 
-            allAccounts.Add(acc1);
-            allAccounts.Add(acc2);
-            allAccounts.Add(acc3);
-            allAccounts.Add(acc4);
-            allAccounts.Add(acc5);
-            allAccounts.Add(acc6);
+            AllAccounts.Add(acc1);
+            AllAccounts.Add(acc2);
+            AllAccounts.Add(acc3);
+            AllAccounts.Add(acc4);
+            AllAccounts.Add(acc5);
+            AllAccounts.Add(acc6);
 
             acc1.deposit(100);
             acc2.deposit(200);
@@ -76,7 +81,7 @@ namespace BIT706_A1_5045523_BinnyHira
             //make sure listbox is empty
             lstCustomers.Items.Clear();
             //Add the book titles to the listBox
-            foreach (Customer cust in allcustomers)
+            foreach (Customer cust in Allcustomers)
             {
                 lstCustomers.Items.Add(cust);
             }
@@ -86,15 +91,30 @@ namespace BIT706_A1_5045523_BinnyHira
 
         private void btnGetCustomer_Click(object sender, EventArgs e)
         {
-            Customer selectedCustomer = (Customer)lstCustomers.SelectedItem;
-            lblInfo.Text = selectedCustomer.ToString();
+            SelectedCust = (Customer)lstCustomers.SelectedItem;
+            lblInfo.Text = SelectedCust.ToString();
         }
 
         private void btnRefresh_Click(object sender, EventArgs e)
         {
             DisplayCustomers();
             lblInfo.Text = "";
+            SelectedCust = new Customer(); // Clear selection.
         }
 
+        private void openAccountsButton_Click(object sender, EventArgs e)
+        {
+            ActiveForm.Hide();
+            if (SelectedCust != null)
+            {
+                ShowAccounts showAccounts = new ShowAccounts();
+                showAccounts.Show();
+            }
+            else 
+            {
+                System.Windows.Forms.MessageBox.Show("No Customer Selected.");
+            }
+
+        }
     }
 }
