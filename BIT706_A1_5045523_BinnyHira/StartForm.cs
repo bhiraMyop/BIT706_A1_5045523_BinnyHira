@@ -99,20 +99,22 @@ namespace BIT706_A1_5045523_BinnyHira
         {
             DisplayCustomers();
             lblInfo.Text = "";
-            SelectedCust = new Customer(); // Clear selection.
+            SelectedCust = null; // Clear selection.
         }
 
         private void openAccountsButton_Click(object sender, EventArgs e)
         {
-            ActiveForm.Hide();
+            
             if (SelectedCust != null)
             {
+                
                 ShowAccounts showAccounts = new ShowAccounts();
+                ActiveForm.Hide();
                 showAccounts.Show();
             }
             else 
             {
-                System.Windows.Forms.MessageBox.Show("No Customer Selected.");
+                MessageBox.Show("No Customer Selected.");
             }
 
         }

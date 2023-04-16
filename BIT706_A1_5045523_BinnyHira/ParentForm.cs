@@ -17,8 +17,8 @@ namespace BIT706_A1_5045523_BinnyHira
         private static List<AAccounts> allAccounts = new List<AAccounts>();
         private static int custID;
         private static int accID;
-        private static Customer selectedCust;
-        private static AAccounts selectedAcc;
+        private static Customer selectedCust = null;
+        private static AAccounts selectedAcc = null;
 
        public static int CustID { get => custID; set => custID = value; }
         public static int AccID { get => accID; set => accID = value; }
