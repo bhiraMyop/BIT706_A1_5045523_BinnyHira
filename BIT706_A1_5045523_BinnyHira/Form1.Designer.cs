@@ -51,7 +51,7 @@
             this.textOutput.Location = new System.Drawing.Point(46, 12);
             this.textOutput.Name = "textOutput";
             this.textOutput.ScrollAlwaysVisible = true;
-            this.textOutput.Size = new System.Drawing.Size(718, 308);
+            this.textOutput.Size = new System.Drawing.Size(716, 308);
             this.textOutput.TabIndex = 5;
             // 
             // Form1

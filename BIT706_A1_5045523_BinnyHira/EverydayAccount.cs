@@ -9,7 +9,10 @@ namespace BIT706_A1_5045523_BinnyHira
     internal class EverydayAccount : AAccounts
     {
         // Constructors
-        public EverydayAccount(Customer customer) : base(customer) { }
+        public EverydayAccount(Customer customer) : base(customer) 
+        {
+            //Customer.CustomerAccounts.Add(this);
+        }
 
 
         // Methods
@@ -41,7 +44,7 @@ namespace BIT706_A1_5045523_BinnyHira
                 $"\nFailedFee = {FailedFee.ToString()} " +
                 $"\nInterestRate = {InterestRate.ToString()} " +
                 $"\nOverdraft Allowed = {Overdraft.ToString()} " +
-                $"\nCustomers Details {Customer.Name}");
+                $"\nCustomers Details {Customer.Name} {Customer.CustomerAccounts.ToString()}" );
         }
     }
 }
