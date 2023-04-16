@@ -21,9 +21,16 @@ namespace BIT706_A1_5045523_BinnyHira
             }
         }
 
-        public override string withdrawl()
+        public override void withdrawl(double withdrawlAmount)
         {
-            return "";
+            if (withdrawlAmount > 0 && Balance >= withdrawlAmount )
+            {
+                Balance -= withdrawlAmount;
+            }
+            else if (withdrawlAmount <= 0 || Balance < withdrawlAmount)
+            {
+                FailedFee = 0;
+            }
         }
 
         public override string ToString()
