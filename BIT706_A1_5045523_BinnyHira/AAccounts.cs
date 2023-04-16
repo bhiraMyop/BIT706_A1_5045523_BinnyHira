@@ -15,7 +15,7 @@ namespace BIT706_A1_5045523_BinnyHira
         private double interestRate = 0.0; //in percentage 0.0%
         private int overdraft = (int)OverdraftAllowed.No;
         private Customer customer;
-
+        //TO hold the accounts that have been opened. 
 
         // Getter and Setter
         public int AccountNo { get => accountNo; set => accountNo = value; }
@@ -54,8 +54,7 @@ namespace BIT706_A1_5045523_BinnyHira
         public abstract void withdrawl(double withdrawlAmount);
         // Deposit Method
         public abstract void deposit(double depositAmount);
- 
-
+        
         public override string ToString()
         {
             return ($"AccountNo = +  {AccountNo.ToString()} " +
