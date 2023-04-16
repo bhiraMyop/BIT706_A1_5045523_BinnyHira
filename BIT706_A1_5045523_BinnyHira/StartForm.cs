@@ -46,9 +46,9 @@ namespace BIT706_A1_5045523_BinnyHira
             Allcustomers.Add(cust6);
 
             EverydayAccount acc1 = new EverydayAccount(cust1);
-            InvestmentAccount acc2 = new InvestmentAccount(3.99, cust2);
-            OmniAccount acc3 = new OmniAccount(4.99, cust3);
-            EverydayAccount acc4 = new EverydayAccount(cust4);
+            InvestmentAccount acc2 = new InvestmentAccount(3.99, cust1);
+            OmniAccount acc3 = new OmniAccount(4.99, cust1);
+            EverydayAccount acc4 = new EverydayAccount(cust1);
             InvestmentAccount acc5 = new InvestmentAccount(3.99, cust5);
             OmniAccount acc6 = new OmniAccount(4.99, cust6);
 
