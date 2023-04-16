@@ -10,7 +10,7 @@ namespace BIT706_A1_5045523_BinnyHira
     internal class OmniAccount : AAccounts
     {
         // Constructors
-        public OmniAccount(double interestRate) : base(interestRate)
+        public OmniAccount(double interestRate, Customer customer) : base(interestRate, customer)
         {
             //intreset rate is set at account creation
             //Failed fee is standard $10.00
@@ -19,9 +19,9 @@ namespace BIT706_A1_5045523_BinnyHira
 
 
         // Methods
-        public override string deposit()
+        public override void deposit(double depositAmount)
         {
-            return "";
+            Balance += depositAmount;
         }
 
         public override string withdrawl()

@@ -59,7 +59,6 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="APerson.cs" />
-    <Compile Include="IAccounts.cs" />
     <Compile Include="OverdraftAllowed.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

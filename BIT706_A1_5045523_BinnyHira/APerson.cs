@@ -9,7 +9,7 @@ namespace BIT706_A1_5045523_BinnyHira
     internal abstract class APerson
     {
         private int personID;
-        private int idCounter = 1;
+        private static int idCounter = 1;
         private string name;
         private string contactNo;
         private string address;

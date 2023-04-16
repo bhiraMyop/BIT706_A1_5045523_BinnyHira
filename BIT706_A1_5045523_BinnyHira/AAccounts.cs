@@ -14,6 +14,7 @@ namespace BIT706_A1_5045523_BinnyHira
         private double failedFee = 0.0;
         private double interestRate = 0.0; //in percentage 0.0%
         private int overdraft = (int)OverdraftAllowed.No;
+        private Customer customer;
 
 
         // Getter and Setter
@@ -22,6 +23,7 @@ namespace BIT706_A1_5045523_BinnyHira
         public double FailedFee { get => failedFee; set => failedFee = value; }
         public double InterestRate { get => interestRate; set => interestRate = value; }
         internal int Overdraft { get => overdraft; set => overdraft = value; }
+        internal Customer Customer { get => customer; set => customer = value; }
 
 
         // Constructors
@@ -30,6 +32,11 @@ namespace BIT706_A1_5045523_BinnyHira
             AccountNo = accountCounter;
             accountCounter++;
         }
+        //for everyday account
+        public AAccounts(Customer customer) : this()
+        {
+            Customer = customer;
+        }
         //for Investment Account and Omni Accounts
         public AAccounts(double interestRate) : this()
         { 
@@ -37,10 +44,17 @@ namespace BIT706_A1_5045523_BinnyHira
             FailedFee = 10.00;
         }
 
+        public AAccounts(double interestRate, Customer customer) : this(interestRate)
+        {
+            Customer = customer;
+        }
+
+
         // Withdrawal Method
         public abstract string withdrawl();
         // Deposit Method
-        public abstract string deposit();
+        public abstract void deposit(double depositAmount);
+ 
 
         public override string ToString()
         {
