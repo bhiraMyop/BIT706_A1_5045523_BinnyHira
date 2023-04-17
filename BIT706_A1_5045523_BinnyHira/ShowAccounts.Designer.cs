@@ -33,7 +33,6 @@
             this.lstAccInfo = new System.Windows.Forms.Label();
             this.btnGetAccount = new System.Windows.Forms.Button();
             this.btnRefresh2 = new System.Windows.Forms.Button();
-            this.showCustomers = new System.Windows.Forms.Button();
             this.withdrawButton = new System.Windows.Forms.Button();
             this.depositButton = new System.Windows.Forms.Button();
             this.buttonInterest = new System.Windows.Forms.Button();
@@ -54,7 +53,7 @@
             // 
             this.customerLabel.AutoSize = true;
             this.customerLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.customerLabel.Location = new System.Drawing.Point(402, 9);
+            this.customerLabel.Location = new System.Drawing.Point(402, 35);
             this.customerLabel.Name = "customerLabel";
             this.customerLabel.Size = new System.Drawing.Size(131, 20);
             this.customerLabel.TabIndex = 6;
@@ -64,9 +63,9 @@
             // 
             this.lstAccInfo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lstAccInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lstAccInfo.Location = new System.Drawing.Point(406, 93);
+            this.lstAccInfo.Location = new System.Drawing.Point(406, 95);
             this.lstAccInfo.Name = "lstAccInfo";
-            this.lstAccInfo.Size = new System.Drawing.Size(590, 71);
+            this.lstAccInfo.Size = new System.Drawing.Size(590, 107);
             this.lstAccInfo.TabIndex = 8;
             // 
             // btnGetAccount
@@ -91,20 +90,10 @@
             this.btnRefresh2.UseVisualStyleBackColor = true;
             this.btnRefresh2.Click += new System.EventHandler(this.btnRefresh2_Click);
             // 
-            // showCustomers
-            // 
-            this.showCustomers.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.showCustomers.Location = new System.Drawing.Point(38, 373);
-            this.showCustomers.Name = "showCustomers";
-            this.showCustomers.Size = new System.Drawing.Size(236, 45);
-            this.showCustomers.TabIndex = 11;
-            this.showCustomers.Text = "Show Customers";
-            this.showCustomers.UseVisualStyleBackColor = true;
-            // 
             // withdrawButton
             // 
             this.withdrawButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.withdrawButton.Location = new System.Drawing.Point(406, 218);
+            this.withdrawButton.Location = new System.Drawing.Point(406, 269);
             this.withdrawButton.Name = "withdrawButton";
             this.withdrawButton.Size = new System.Drawing.Size(148, 45);
             this.withdrawButton.TabIndex = 12;
@@ -114,7 +103,7 @@
             // depositButton
             // 
             this.depositButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.depositButton.Location = new System.Drawing.Point(635, 218);
+            this.depositButton.Location = new System.Drawing.Point(635, 269);
             this.depositButton.Name = "depositButton";
             this.depositButton.Size = new System.Drawing.Size(148, 45);
             this.depositButton.TabIndex = 13;
@@ -124,7 +113,7 @@
             // buttonInterest
             // 
             this.buttonInterest.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonInterest.Location = new System.Drawing.Point(848, 218);
+            this.buttonInterest.Location = new System.Drawing.Point(848, 269);
             this.buttonInterest.Name = "buttonInterest";
             this.buttonInterest.Size = new System.Drawing.Size(148, 45);
             this.buttonInterest.TabIndex = 14;
@@ -135,11 +124,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1047, 450);
+            this.ClientSize = new System.Drawing.Size(1028, 366);
             this.Controls.Add(this.buttonInterest);
             this.Controls.Add(this.depositButton);
             this.Controls.Add(this.withdrawButton);
-            this.Controls.Add(this.showCustomers);
             this.Controls.Add(this.btnRefresh2);
             this.Controls.Add(this.btnGetAccount);
             this.Controls.Add(this.lstAccInfo);
@@ -159,7 +147,6 @@
         private System.Windows.Forms.Label lstAccInfo;
         private System.Windows.Forms.Button btnGetAccount;
         private System.Windows.Forms.Button btnRefresh2;
-        private System.Windows.Forms.Button showCustomers;
         private System.Windows.Forms.Button withdrawButton;
         private System.Windows.Forms.Button depositButton;
         private System.Windows.Forms.Button buttonInterest;

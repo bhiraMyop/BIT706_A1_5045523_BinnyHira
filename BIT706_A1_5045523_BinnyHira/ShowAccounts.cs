@@ -9,7 +9,7 @@ namespace BIT706_A1_5045523_BinnyHira
         {
             InitializeComponent();
             updateLabel();
-            DisplayCustomersAccounts();
+            DisplayCustomersAccounts();            
         }
         public void updateLabel()
         {
