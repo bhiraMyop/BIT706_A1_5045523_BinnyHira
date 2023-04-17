@@ -10,7 +10,7 @@ namespace BIT706_A1_5045523_BinnyHira
     internal class OmniAccount : AAccounts
     {
         // Constructors
-        public OmniAccount(double interestRate, Customer customer) : base(interestRate, customer)
+        public OmniAccount(double interestRate, Customer customer, double overdraftLimit) : base(interestRate, customer, overdraftLimit)
         {
             //intreset rate is set at account creation
             //Failed fee is standard $10.00
@@ -40,13 +40,15 @@ namespace BIT706_A1_5045523_BinnyHira
         }
         public override string ToString()
         {
-            return ($"Account Type = Omni Account " +
-                $"\nAccountNo =  {AccountNo.ToString()} " +
-                $"\nBalance = ${Balance.ToString()} " +
-                $"\nFailedFee = {FailedFee.ToString()} " +
-                $"\nInterestRate = {InterestRate.ToString()} " +
-                $"\nOverdraft Allowed = {Overdraft.ToString()} ");
-        }
+            string str = $"Omni Account {AccountNo}; Balance ${Balance}";
 
+            return str;
+        }
+        public override string toStringListAccounts()
+        {
+            string str = $"Omni Account {AccountNo}; InterestRate {InterestRate}%; Overdraft Limit ${OverdraftLimit}; " +
+                $"Failed Fee{FailedFee};  Balance ${Balance}";
+            return str;
+        }
     }
 }

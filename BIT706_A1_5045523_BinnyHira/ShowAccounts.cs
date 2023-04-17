@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace BIT706_A1_5045523_BinnyHira
@@ -34,7 +27,7 @@ namespace BIT706_A1_5045523_BinnyHira
             {
                 if (acc.Customer.PersonID == SelectedCust.PersonID)
                 {
-                    lstAccounts.Items.Add(acc);
+                    lstAccounts.Items.Add(acc);                    
                 }
             }
             
@@ -45,7 +38,7 @@ namespace BIT706_A1_5045523_BinnyHira
         private void btnGetAccount_Click(object sender, EventArgs e)
         {
             SelectedAcc = (AAccounts)lstAccounts.SelectedItem;
-            lstAccInfo.Text = SelectedAcc.ToString();
+            lstAccInfo.Text = SelectedAcc.toStringListAccounts();
         }
 
         private void btnRefresh2_Click(object sender, EventArgs e)
@@ -53,44 +46,6 @@ namespace BIT706_A1_5045523_BinnyHira
             DisplayCustomersAccounts();
             SelectedAcc = null;
             lstAccInfo.Text = "";
-        }
-
-        //Show Account details as a Message Box
-        // if SelectedAcc is empty then show error message that no Account is selected. 
-        private void showAccInfo_Click(object sender, EventArgs e)
-        {
-            string str = "";
-            string accountType = "";
-
-            if (SelectedAcc == null)
-            {
-                str = "ERROR! - No Account selected";
-            }
-            else if (SelectedAcc.GetType().Name == "EverydayAccount")
-            {
-                accountType = "Everyday Account";
-            }
-            else if (SelectedAcc.GetType().Name == "InvestmentAccount")
-            {
-                accountType = "Investment Account";
-            }
-            else if(SelectedAcc.GetType().Name == "OmniAccount")
-            {
-                accountType = "Omni Account";
-            }
-
-            if(SelectedAcc != null)
-            {
-                str = $"Account number - {SelectedAcc.AccountNo}\n" +
-                $"Account Type - {accountType}\n" +
-                $"Account Balance - ${SelectedAcc.Balance}\n" +
-                $"Overdraft Allowed - {SelectedAcc.Overdraft.GetType()} \n" +
-                $"Account number - {SelectedAcc.AccountNo} \n" +
-                $"Account number - {SelectedAcc.AccountNo}";
-            }
-
-
-            MessageBox.Show(str);
         }
     }
 }
