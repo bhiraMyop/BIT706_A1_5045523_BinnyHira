@@ -114,7 +114,7 @@ namespace BIT706_A1_5045523_BinnyHira
             }
             else 
             {
-                MessageBox.Show("No Customer Selected.");
+                MessageBox.Show("ERROR! - No Customer Selected.");
             }
 
         }

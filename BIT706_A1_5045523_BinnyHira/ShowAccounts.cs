@@ -54,5 +54,43 @@ namespace BIT706_A1_5045523_BinnyHira
             SelectedAcc = null;
             lstAccInfo.Text = "";
         }
+
+        //Show Account details as a Message Box
+        // if SelectedAcc is empty then show error message that no Account is selected. 
+        private void showAccInfo_Click(object sender, EventArgs e)
+        {
+            string str = "";
+            string accountType = "";
+
+            if (SelectedAcc == null)
+            {
+                str = "ERROR! - No Account selected";
+            }
+            else if (SelectedAcc.GetType().Name == "EverydayAccount")
+            {
+                accountType = "Everyday Account";
+            }
+            else if (SelectedAcc.GetType().Name == "InvestmentAccount")
+            {
+                accountType = "Investment Account";
+            }
+            else if(SelectedAcc.GetType().Name == "OmniAccount")
+            {
+                accountType = "Omni Account";
+            }
+
+            if(SelectedAcc != null)
+            {
+                str = $"Account number - {SelectedAcc.AccountNo}\n" +
+                $"Account Type - {accountType}\n" +
+                $"Account Balance - ${SelectedAcc.Balance}\n" +
+                $"Overdraft Allowed - {SelectedAcc.Overdraft.GetType()} \n" +
+                $"Account number - {SelectedAcc.AccountNo} \n" +
+                $"Account number - {SelectedAcc.AccountNo}";
+            }
+
+
+            MessageBox.Show(str);
+        }
     }
 }
