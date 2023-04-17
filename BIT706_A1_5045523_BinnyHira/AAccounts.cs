@@ -13,6 +13,7 @@ namespace BIT706_A1_5045523_BinnyHira
         private double balance = 0;
         private double failedFee = 0.0;
         private double interestRate = 0.0; //in percentage 0.0%
+        private double overdraftLimit;
         private int overdraft = (int)OverdraftAllowed.No;
         private Customer customer;
         //TO hold the accounts that have been opened. 
@@ -22,6 +23,7 @@ namespace BIT706_A1_5045523_BinnyHira
         public double Balance { get => balance; set => balance = value; }
         public double FailedFee { get => failedFee; set => failedFee = value; }
         public double InterestRate { get => interestRate; set => interestRate = value; }
+        public double OverdraftLimit { get => overdraftLimit; set => overdraftLimit = value; }
         internal int Overdraft { get => overdraft; set => overdraft = value; }
         internal Customer Customer { get => customer; set => customer = value; }
 
@@ -37,16 +39,20 @@ namespace BIT706_A1_5045523_BinnyHira
         {
             Customer = customer;
         }
-        //for Investment Account and Omni Accounts
+        //for Investment Account
         public AAccounts(double interestRate) : this()
         { 
             InterestRate = interestRate;
             FailedFee = 10.00;
         }
-
         public AAccounts(double interestRate, Customer customer) : this(interestRate)
         {
             Customer = customer;
+        }
+        //For Omni Accounts
+        public AAccounts(double interestRate, Customer customer, double overdraftLimit ) : this(interestRate, customer)
+        {
+            OverdraftLimit = overdraftLimit;
         }
 
 
@@ -54,7 +60,7 @@ namespace BIT706_A1_5045523_BinnyHira
         public abstract void withdrawl(double withdrawlAmount);
         // Deposit Method
         public abstract void deposit(double depositAmount);
-        
+        /*
         public override string ToString()
         {
             return ($"AccountNo = +  {AccountNo.ToString()} " +
@@ -62,6 +68,10 @@ namespace BIT706_A1_5045523_BinnyHira
                 $"\nFailedFee = {FailedFee.ToString()} " +
                 $"\nInterestRate = {InterestRate.ToString()} " +
                 $"\nOverdraft Allowed = {Overdraft.ToString()} ");
-        }
+        }*/
+        // To list accounts in listbox
+        public abstract string toStringListAccounts();
+
+
     }
 }

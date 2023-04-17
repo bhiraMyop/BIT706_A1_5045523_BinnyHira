@@ -40,7 +40,7 @@ namespace BIT706_A1_5045523_BinnyHira
 
         public override string ToString()
         {
-            return ($"{PersonID.ToString()}  {Name.ToString()} {ContactNo.ToString()} {Address.ToString()} {isBanksstaff.ToString()}");
+            return ($"{PersonID.ToString()} {Name.ToString()} {ContactNo.ToString()} {Address.ToString()} {isBanksstaff.ToString()}");
         }
 
     }
