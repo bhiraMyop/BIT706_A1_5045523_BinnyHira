@@ -47,7 +47,7 @@ namespace BIT706_A1_5045523_BinnyHira
             {
                 // FailedFee = 10;
                 Balance -= FailedFee;
-                str = ($"Withdrawl Failed - Not enough Money in Account\n " +
+                str = ($"Withdrawl Failed - Not enough Money in Account\n" +
                     $"Investment Account {AccountNo}; Withdrawl Amount {withdrawlAmount}; Transaction Failed; Fee {FailedFee};  " +
                     $"Balance ${Balance}");
             }
