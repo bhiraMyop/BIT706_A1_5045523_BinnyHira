@@ -77,5 +77,28 @@ namespace BIT706_A1_5045523_BinnyHira
                 }
             }
         }
+
+        private void depositButton_Click(object sender, EventArgs e)
+        {
+            if (SelectedAcc == null)
+            {
+                MessageBox.Show("ERROR! - No Account Selected.");
+            }
+            else if (string.IsNullOrEmpty(textBoxAmount.Text.ToString()) || textBoxAmount.Text.ToString() == " " )
+            {
+                MessageBox.Show("ERROR! - No Amount Entered.");
+            }
+            else
+            {
+                double dollarAmount = 0.0;
+
+                if (double.TryParse($"{textBoxAmount.Text.ToString()}", out dollarAmount))
+                {
+                    double.TryParse(dollarAmount.ToString("N2"), out dollarAmount); //convert to 2 decimal places
+                    MessageBox.Show(SelectedAcc.deposit(SelectedAcc, dollarAmount));
+                    btnRefresh2.PerformClick();
+                }
+            }
+        }
     }
 }

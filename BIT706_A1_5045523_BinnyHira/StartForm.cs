@@ -66,13 +66,6 @@ namespace BIT706_A1_5045523_BinnyHira
                 AllAccounts.Add(acc4);
                 AllAccounts.Add(acc5);
                 AllAccounts.Add(acc6);
-
-                acc1.deposit(100);
-                acc2.deposit(200);
-                acc3.deposit(300);
-                acc4.deposit(400);
-                acc5.deposit(500);
-                acc6.deposit(600);
             }
         }
 

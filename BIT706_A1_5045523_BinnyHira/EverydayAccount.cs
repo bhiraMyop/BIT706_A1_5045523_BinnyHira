@@ -16,12 +16,19 @@ namespace BIT706_A1_5045523_BinnyHira
 
 
         // Methods
-        public override void deposit(double depositAmount)
+        public override string deposit(AAccounts selectedAcc, double depositAmount)
         {
-            if (depositAmount > 0)
+            string str = "";
+            if(depositAmount <= 0)
+            {
+                str = ("Deposit Failed - Amount cannot be less that or equal to 0");
+            }
+            else if (depositAmount > 0)
             {
                 Balance += depositAmount;
+                str = ($"Everyday Account {AccountNo}; Deposit Amount {depositAmount}; Balance ${Balance}");
             }
+            return str;
         }
 
         public override string withdrawl(AAccounts selectedAcc, double withdrawlAmount)
@@ -32,12 +39,22 @@ namespace BIT706_A1_5045523_BinnyHira
                 Balance -= withdrawlAmount;
                 str = ($"Withdrawl Completed: {selectedAcc.ToString()}");
             }
-            else if (withdrawlAmount <= 0 || Balance < withdrawlAmount)
+            else if(withdrawlAmount <= 0 )
+            {
+                str = ("Withdrawl Failed - Amount cannot be less that or equal to 0");
+            }
+            else if ( Balance < withdrawlAmount)
             {
                 //FailedFee = 0;
                 str = ($"Withdrawl Failed - Not enough Money in Account\n" +
                     $"Everyday Account {AccountNo}; Withdrawl Amount {withdrawlAmount}; Transaction Failed; Fee {FailedFee};  Balance ${Balance}");
             }
+            return str;
+        }
+
+        public override string calculateInterest(AAccounts selectedAcc, double depositAmount)
+        {
+            string str = "";
             return str;
         }
 
