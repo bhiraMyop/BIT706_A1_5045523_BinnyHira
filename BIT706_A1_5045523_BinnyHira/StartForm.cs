@@ -73,13 +73,6 @@ namespace BIT706_A1_5045523_BinnyHira
                 acc4.deposit(400);
                 acc5.deposit(500);
                 acc6.deposit(600);
-
-                acc1.withdrawl(50);
-                acc2.withdrawl(-50);
-                acc3.withdrawl(50);
-                acc4.withdrawl(50);
-                acc5.withdrawl(50);
-                acc6.withdrawl(50);
             }
         }
 

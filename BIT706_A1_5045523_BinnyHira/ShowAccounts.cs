@@ -1,15 +1,18 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace BIT706_A1_5045523_BinnyHira
 {
     public partial class ShowAccounts : ParentForm
-    {
+    {//
         public ShowAccounts()
         {
             InitializeComponent();
             updateLabel();
-            DisplayCustomersAccounts();            
+            DisplayCustomersAccounts();
+            amountLabel.Hide();
+            textBoxAmount.Hide();
         }
         public void updateLabel()
         {
@@ -39,6 +42,8 @@ namespace BIT706_A1_5045523_BinnyHira
         {
             SelectedAcc = (AAccounts)lstAccounts.SelectedItem;
             lstAccInfo.Text = SelectedAcc.toStringListAccounts();
+            amountLabel.Show();
+            textBoxAmount.Show();
         }
 
         private void btnRefresh2_Click(object sender, EventArgs e)
@@ -46,6 +51,31 @@ namespace BIT706_A1_5045523_BinnyHira
             DisplayCustomersAccounts();
             SelectedAcc = null;
             lstAccInfo.Text = "";
+            amountLabel.Hide();
+            textBoxAmount.Clear();
+            textBoxAmount.Hide();
+        }
+        private void withdrawButton_Click(object sender, EventArgs e)
+        {
+            if (SelectedAcc == null)
+            {
+                MessageBox.Show("ERROR! - No Account Selected.");
+            }
+            else if (string.IsNullOrEmpty(textBoxAmount.Text.ToString()) || textBoxAmount.Text.ToString() == " ")
+            {
+                MessageBox.Show("ERROR! - No Amount Entered.");
+            }
+            else
+            {
+                double dollarAmount = 0.0;
+
+                if (double.TryParse($"{textBoxAmount.Text.ToString()}", out dollarAmount))
+                {
+                   double.TryParse(dollarAmount.ToString("N2"), out dollarAmount); //convert to 2 decimal places
+                   MessageBox.Show(SelectedAcc.withdrawl(SelectedAcc, dollarAmount));
+                   btnRefresh2.PerformClick();
+                }
+            }
         }
     }
 }
