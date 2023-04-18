@@ -100,5 +100,18 @@ namespace BIT706_A1_5045523_BinnyHira
                 }
             }
         }
+
+        private void buttonInterest_Click(object sender, EventArgs e)
+        {
+            if (SelectedAcc == null)
+            {
+                MessageBox.Show("ERROR! - No Account Selected.");
+            }
+            else
+            {
+                MessageBox.Show(SelectedAcc.calculateInterest(SelectedAcc));
+                btnRefresh2.PerformClick();
+            }
+        }
     }
 }

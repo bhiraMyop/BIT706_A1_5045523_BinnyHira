@@ -123,6 +123,7 @@
             this.buttonInterest.TabIndex = 14;
             this.buttonInterest.Text = "Calculate Interest";
             this.buttonInterest.UseVisualStyleBackColor = true;
+            this.buttonInterest.Click += new System.EventHandler(this.buttonInterest_Click);
             // 
             // amountLabel
             // 

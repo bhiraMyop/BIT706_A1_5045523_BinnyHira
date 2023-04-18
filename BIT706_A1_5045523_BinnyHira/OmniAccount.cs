@@ -17,7 +17,6 @@ namespace BIT706_A1_5045523_BinnyHira
             Overdraft = (int)OverdraftAllowed.Yes;
         }
 
-
         // Methods
         public override string deposit(AAccounts selectedAcc, double depositAmount)
         {
@@ -49,6 +48,7 @@ namespace BIT706_A1_5045523_BinnyHira
             else if (Balance < withdrawlAmount)
             {
                 //FailedFee = 10;
+                Balance -= FailedFee;
                 str = ($"Withdrawl Failed - Not enough Money in Account\n " +
                     $"Omni Account {AccountNo}; Withdrawl Amount {withdrawlAmount}; " +
                     $"Transaction Failed; Fee {FailedFee}; Overdraft Limit {OverdraftLimit}; Balance ${Balance}");
@@ -56,9 +56,18 @@ namespace BIT706_A1_5045523_BinnyHira
             return str;
         }
 
-        public override string calculateInterest(AAccounts selectedAcc, double depositAmount)
+        public override string calculateInterest(AAccounts selectedAcc)
         {
             string str = "";
+            if (selectedAcc.Balance >= 1000.00)
+            {
+                Balance += (selectedAcc.InterestRate / 100) * selectedAcc.Balance;
+                str = $"Omni Account {AccountNo}; InterestRate {InterestRate}%; Balance ${Balance}";
+            }
+            else
+            {
+                str = "Intrest Update Failed!!!! - Account does not have a balance over $1000";
+            }
             return str;
         }
 

@@ -45,16 +45,20 @@ namespace BIT706_A1_5045523_BinnyHira
             }
             else if (Balance < withdrawlAmount)
             {
-               // FailedFee = 10;
+                // FailedFee = 10;
+                Balance -= FailedFee;
                 str = ($"Withdrawl Failed - Not enough Money in Account\n " +
-                    $"Investment Account {AccountNo}; Withdrawl Amount {withdrawlAmount}; Transaction Failed; Fee {FailedFee};  Balance ${Balance}");
+                    $"Investment Account {AccountNo}; Withdrawl Amount {withdrawlAmount}; Transaction Failed; Fee {FailedFee};  " +
+                    $"Balance ${Balance}");
             }
             return str;
         }
 
-        public override string calculateInterest(AAccounts selectedAcc, double depositAmount)
+        public override string calculateInterest(AAccounts selectedAcc)
         {
             string str = "";
+            Balance += (selectedAcc.InterestRate / 100) * selectedAcc.Balance;
+            str = $"Investment Account {AccountNo}; InterestRate {InterestRate}%; Balance ${Balance}";
             return str;
         }
 
