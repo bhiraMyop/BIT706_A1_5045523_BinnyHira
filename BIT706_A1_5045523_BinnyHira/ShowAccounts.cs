@@ -1,11 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
+using System.Runtime.Serialization;
+using System.Runtime.Serialization.Formatters.Binary;
+using System.IO;
 
 namespace BIT706_A1_5045523_BinnyHira
 {
+    [Serializable]
     public partial class ShowAccounts : ParentForm
-    {//
+    {
+        List<string> transactions = new List<string>();
         public ShowAccounts()
         {
             InitializeComponent();
@@ -72,7 +77,10 @@ namespace BIT706_A1_5045523_BinnyHira
                 if (double.TryParse($"{textBoxAmount.Text.ToString()}", out dollarAmount))
                 {
                    double.TryParse(dollarAmount.ToString("N2"), out dollarAmount); //convert to 2 decimal places
-                   MessageBox.Show(SelectedAcc.withdrawl(SelectedAcc, dollarAmount));
+                    string str = SelectedAcc.withdrawl(SelectedAcc, dollarAmount);
+                    transactions.Add(str);
+                    WriteBinaryData();
+                   MessageBox.Show(str);
                    btnRefresh2.PerformClick();
                 }
             }
@@ -95,7 +103,10 @@ namespace BIT706_A1_5045523_BinnyHira
                 if (double.TryParse($"{textBoxAmount.Text.ToString()}", out dollarAmount))
                 {
                     double.TryParse(dollarAmount.ToString("N2"), out dollarAmount); //convert to 2 decimal places
-                    MessageBox.Show(SelectedAcc.deposit(SelectedAcc, dollarAmount));
+                    string str = SelectedAcc.deposit(SelectedAcc, dollarAmount);
+                    transactions.Add(str);
+                    WriteBinaryData(); 
+                    MessageBox.Show(str);
                     btnRefresh2.PerformClick();
                 }
             }
@@ -109,9 +120,54 @@ namespace BIT706_A1_5045523_BinnyHira
             }
             else
             {
-                MessageBox.Show(SelectedAcc.calculateInterest(SelectedAcc));
+                string str = SelectedAcc.calculateInterest(SelectedAcc);
+                transactions.Add(str);
+                WriteBinaryData();
+                MessageBox.Show(str);
                 btnRefresh2.PerformClick();
             }
         }
+
+        public void WriteBinaryData()
+        {
+            //create a formatting object
+            IFormatter formatter = new BinaryFormatter();
+
+            //Create a new IO stream to write to the file Objects.bin
+            Stream stream = new FileStream("objects.bin", FileMode.Create,
+            FileAccess.Write, FileShare.None);
+
+            //use the formatter to serialize the collection and send it to the filestream
+            formatter.Serialize(stream, transactions);
+
+            //close the file
+            stream.Close();
+        }
+
+        public void ReadBinaryData()
+        {
+            IFormatter formatter = new BinaryFormatter();
+            Stream stream = new FileStream("Objects.bin", FileMode.Open, FileAccess.Read,
+            FileShare.Read);
+            transactions = (List<string>)formatter.Deserialize(stream);
+            stream.Close();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            // Read Binary Data
+            ReadBinaryData();
+            showBinaryData();
+        }
+
+        private void showBinaryData()
+        {
+            foreach(string str in transactions)
+            {
+                transactionsLabel.Text += str;
+                transactionsLabel.Text += "\n------------------------------------------------------------\n";
+            }
+        }
+
     }
 }

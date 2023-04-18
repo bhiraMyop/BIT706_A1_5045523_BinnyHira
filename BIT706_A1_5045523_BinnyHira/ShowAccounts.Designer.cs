@@ -38,6 +38,8 @@
             this.buttonInterest = new System.Windows.Forms.Button();
             this.amountLabel = new System.Windows.Forms.Label();
             this.textBoxAmount = new System.Windows.Forms.TextBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.transactionsLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lstAccounts
@@ -142,11 +144,33 @@
             this.textBoxAmount.Size = new System.Drawing.Size(100, 20);
             this.textBoxAmount.TabIndex = 16;
             // 
+            // button2
+            // 
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(464, 334);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(234, 50);
+            this.button2.TabIndex = 18;
+            this.button2.Text = "Show Transaction History";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // transactionsLabel
+            // 
+            this.transactionsLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.transactionsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.transactionsLabel.Location = new System.Drawing.Point(289, 387);
+            this.transactionsLabel.Name = "transactionsLabel";
+            this.transactionsLabel.Size = new System.Drawing.Size(590, 263);
+            this.transactionsLabel.TabIndex = 19;
+            // 
             // ShowAccounts
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1028, 366);
+            this.ClientSize = new System.Drawing.Size(1028, 659);
+            this.Controls.Add(this.transactionsLabel);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.textBoxAmount);
             this.Controls.Add(this.amountLabel);
             this.Controls.Add(this.buttonInterest);
@@ -176,5 +200,7 @@
         private System.Windows.Forms.Button buttonInterest;
         private System.Windows.Forms.Label amountLabel;
         private System.Windows.Forms.TextBox textBoxAmount;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label transactionsLabel;
     }
 }
