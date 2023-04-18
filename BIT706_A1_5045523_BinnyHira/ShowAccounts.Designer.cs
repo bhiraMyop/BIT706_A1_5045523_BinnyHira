@@ -112,6 +112,7 @@
             this.depositButton.TabIndex = 13;
             this.depositButton.Text = "Deposit Money";
             this.depositButton.UseVisualStyleBackColor = true;
+            this.depositButton.Click += new System.EventHandler(this.depositButton_Click);
             // 
             // buttonInterest
             // 
