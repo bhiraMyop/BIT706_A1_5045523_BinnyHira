@@ -30,7 +30,7 @@ namespace BIT706_A1_5045523_BinnyHira
         public override string withdrawl(AAccounts selectedAcc, double withdrawlAmount)
         {
             string str = "";
-            if (withdrawlAmount > 0 && Balance >= withdrawlAmount)
+            if (withdrawlAmount > 0 && (Balance+OverdraftLimit) >= withdrawlAmount)
             {
                 Balance -= withdrawlAmount;
                 str = ($"Withdrawl Completed: {selectedAcc.ToString()}");
@@ -39,7 +39,8 @@ namespace BIT706_A1_5045523_BinnyHira
             {
                 //FailedFee = 10;
                 str = ($"Withdrawl Failed - Not enough Money in Account\n " +
-                    $"Omni Account {AccountNo}; Withdrawl Amount {withdrawlAmount}; Transaction Failed; Fee {FailedFee};  Balance ${Balance}");
+                    $"Omni Account {AccountNo}; Withdrawl Amount {withdrawlAmount}; " +
+                    $"Transaction Failed; Fee {FailedFee}; Overdraft Limit {OverdraftLimit}; Balance ${Balance}");
             }
             return str;
         }
