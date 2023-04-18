@@ -24,16 +24,21 @@ namespace BIT706_A1_5045523_BinnyHira
             }
         }
 
-        public override void withdrawl(double withdrawlAmount)
+        public override string withdrawl(AAccounts selectedAcc, double withdrawlAmount)
         {
+            string str = "";
             if (withdrawlAmount > 0 && Balance >= withdrawlAmount)
             {
                 Balance -= withdrawlAmount;
+                str = ($"Withdrawl Completed: {selectedAcc.ToString()}");
             }
             else if (withdrawlAmount <= 0 || Balance < withdrawlAmount)
             {
-                //FailedFee;
+               // FailedFee = 10;
+                str = ($"Withdrawl Failed - Not enough Money in Account\n " +
+                    $"Investment Account {AccountNo}; Withdrawl Amount {withdrawlAmount}; Transaction Failed; Fee {FailedFee};  Balance ${Balance}");
             }
+            return str;
         }
 
         public override string ToString()

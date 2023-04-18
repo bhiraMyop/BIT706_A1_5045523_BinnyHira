@@ -36,6 +36,8 @@
             this.withdrawButton = new System.Windows.Forms.Button();
             this.depositButton = new System.Windows.Forms.Button();
             this.buttonInterest = new System.Windows.Forms.Button();
+            this.amountLabel = new System.Windows.Forms.Label();
+            this.textBoxAmount = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // lstAccounts
@@ -63,7 +65,7 @@
             // 
             this.lstAccInfo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lstAccInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lstAccInfo.Location = new System.Drawing.Point(406, 95);
+            this.lstAccInfo.Location = new System.Drawing.Point(406, 66);
             this.lstAccInfo.Name = "lstAccInfo";
             this.lstAccInfo.Size = new System.Drawing.Size(590, 107);
             this.lstAccInfo.TabIndex = 8;
@@ -99,6 +101,7 @@
             this.withdrawButton.TabIndex = 12;
             this.withdrawButton.Text = "Withdraw Money";
             this.withdrawButton.UseVisualStyleBackColor = true;
+            this.withdrawButton.Click += new System.EventHandler(this.withdrawButton_Click);
             // 
             // depositButton
             // 
@@ -120,11 +123,30 @@
             this.buttonInterest.Text = "Calculate Interest";
             this.buttonInterest.UseVisualStyleBackColor = true;
             // 
+            // amountLabel
+            // 
+            this.amountLabel.AutoSize = true;
+            this.amountLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.amountLabel.Location = new System.Drawing.Point(402, 206);
+            this.amountLabel.Name = "amountLabel";
+            this.amountLabel.Size = new System.Drawing.Size(106, 20);
+            this.amountLabel.TabIndex = 15;
+            this.amountLabel.Text = "Enter amount";
+            // 
+            // textBoxAmount
+            // 
+            this.textBoxAmount.Location = new System.Drawing.Point(559, 208);
+            this.textBoxAmount.Name = "textBoxAmount";
+            this.textBoxAmount.Size = new System.Drawing.Size(100, 20);
+            this.textBoxAmount.TabIndex = 16;
+            // 
             // ShowAccounts
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1028, 366);
+            this.Controls.Add(this.textBoxAmount);
+            this.Controls.Add(this.amountLabel);
             this.Controls.Add(this.buttonInterest);
             this.Controls.Add(this.depositButton);
             this.Controls.Add(this.withdrawButton);
@@ -150,5 +172,7 @@
         private System.Windows.Forms.Button withdrawButton;
         private System.Windows.Forms.Button depositButton;
         private System.Windows.Forms.Button buttonInterest;
+        private System.Windows.Forms.Label amountLabel;
+        private System.Windows.Forms.TextBox textBoxAmount;
     }
 }
