@@ -5,6 +5,8 @@ VisualStudioVersion = 17.5.33516.290
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BIT706_A1_5045523_BinnyHira", "BIT706_A1_5045523_BinnyHira\BIT706_A1_5045523_BinnyHira.csproj", "{2E77E4A6-AC30-49A4-89D6-12934640E879}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestProjectA2Task2", "..\..\..\..\..\source\repos\TestProjectA2Task2\TestProjectA2Task2.csproj", "{199CDDDF-4A5F-4784-B1C2-8B29E0FD9122}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{2E77E4A6-AC30-49A4-89D6-12934640E879}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2E77E4A6-AC30-49A4-89D6-12934640E879}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2E77E4A6-AC30-49A4-89D6-12934640E879}.Release|Any CPU.Build.0 = Release|Any CPU
+		{199CDDDF-4A5F-4784-B1C2-8B29E0FD9122}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{199CDDDF-4A5F-4784-B1C2-8B29E0FD9122}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{199CDDDF-4A5F-4784-B1C2-8B29E0FD9122}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{199CDDDF-4A5F-4784-B1C2-8B29E0FD9122}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
