@@ -57,7 +57,7 @@ namespace BIT706_A1_5045523_BinnyHira
 
 
         // Withdrawal Method
-        public abstract string withdrawl(AAccounts selectedAcc, double withdrawlAmount);
+        public abstract string Withdrawal(AAccounts selectedAcc, double withdrawlAmount);
         // Deposit Method
         public abstract string deposit(AAccounts selectedAcc, double depositAmount);
         public abstract string calculateInterest(AAccounts selectedAcc);

@@ -82,7 +82,7 @@ namespace BIT706_A1_5045523_BinnyHira
                 else
                 {
                     double.TryParse(dollarAmount.ToString("N2"), out dollarAmount); //convert to 2 decimal places
-                    string str = SelectedAcc.withdrawl(SelectedAcc, dollarAmount);
+                    string str = SelectedAcc.Withdrawal(SelectedAcc, dollarAmount);
                     transactions.Add(str);
                     WriteBinaryData();
                     MessageBox.Show(str);
@@ -101,7 +101,14 @@ namespace BIT706_A1_5045523_BinnyHira
             {
                 MessageBox.Show(ex.Message);
             }
-
+            catch (WithdrawalAmountIs0OrLessExpection ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            catch (NotEnoughMoneyInAccountException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
             /*
             if (SelectedAcc == null)
             {
@@ -119,7 +126,7 @@ namespace BIT706_A1_5045523_BinnyHira
             if (double.TryParse($"{textBoxAmount.Text.ToString()}", out dollarAmount))
             {
                 double.TryParse(dollarAmount.ToString("N2"), out dollarAmount); //convert to 2 decimal places
-                string str = SelectedAcc.withdrawl(SelectedAcc, dollarAmount);
+                string str = SelectedAcc.Withdrawl(SelectedAcc, dollarAmount);
                 transactions.Add(str);
                 // WriteBinaryData();
                 MessageBox.Show(str);

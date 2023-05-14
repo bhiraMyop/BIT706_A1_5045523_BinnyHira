@@ -51,6 +51,7 @@
     <Compile Include="Customer.cs" />
     <Compile Include="NoAccountSelectedException.cs" />
     <Compile Include="NoAmountEnteredException.cs" />
+    <Compile Include="NotEnoughMoneyInAccountException.cs" />
     <Compile Include="OmniAccount.cs" />
     <Compile Include="InvestmentAccount .cs" />
     <Compile Include="EverydayAccount.cs" />
@@ -77,6 +78,7 @@
       <DependentUpon>StartForm.cs</DependentUpon>
     </Compile>
     <Compile Include="StringEnteredException.cs" />
+    <Compile Include="WithdrawalAmountIs0OrLessExpection.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
