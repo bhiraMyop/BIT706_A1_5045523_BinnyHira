@@ -31,7 +31,7 @@ namespace BIT706_A1_5045523_BinnyHira
             return str;
         }
 
-        public override string withdrawl(AAccounts selectedAcc, double withdrawlAmount)
+        public override string Withdrawal(AAccounts selectedAcc, double withdrawlAmount)
         {
             string str = "";
             if (withdrawlAmount > 0 && Balance >= withdrawlAmount)

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace BIT706_A1_5045523_BinnyHira
 {
@@ -31,19 +32,43 @@ namespace BIT706_A1_5045523_BinnyHira
             return str;
         }
 
-        public override string withdrawl(AAccounts selectedAcc, double withdrawlAmount)
+        public override string Withdrawal(AAccounts selectedAcc, double withdrawlAmount)
         {
             string str = "";
+            try
+            {
+                if (withdrawlAmount <= 0)
+                {
+                    throw new WithdrawalAmountIs0OrLessExpection("Withdrawal Failed - Amount cannot be less that or equal to 0");
+                }
+                else if (Balance < withdrawlAmount)
+                {
+                    //FailedFee = 0;
+                    Balance -= FailedFee;
+                    throw new NotEnoughMoneyInAccountException($"Withdrawal Failed - Not enough Money in Account\n" +
+                    $"Everyday Account {AccountNo}; Withdrawal Amount {withdrawlAmount}; Transaction Failed; Fee {FailedFee};  " +
+                    $"Balance ${Balance}");
+                }
+                else
+                {
+                    Balance -= withdrawlAmount;
+                    str = ($"Withdrawal Completed: {selectedAcc.ToString()}");
+                }
+            }
+            catch(Exception) { throw; } //throwing the exception to ShowAccounts form.
+            return str;
+
+            /*
             if (withdrawlAmount > 0 && Balance >= withdrawlAmount )
             {
                 Balance -= withdrawlAmount;
                 str = ($"Withdrawl Completed: {selectedAcc.ToString()}");
             }
-            else if(withdrawlAmount <= 0 )
+            else if(withdrawalAmount <= 0)
             {
-                str = ("Withdrawl Failed - Amount cannot be less that or equal to 0");
+                str = ("Withdrawal Failed - Amount cannot be less that or equal to 0");
             }
-            else if ( Balance < withdrawlAmount)
+            else if ( Balance < withdrawalAmount)
             {
                 //FailedFee = 0;
                 Balance -= FailedFee;
@@ -52,6 +77,7 @@ namespace BIT706_A1_5045523_BinnyHira
                     $"Balance ${Balance}");
             }
             return str;
+            */
         }
 
         public override string calculateInterest(AAccounts selectedAcc)
