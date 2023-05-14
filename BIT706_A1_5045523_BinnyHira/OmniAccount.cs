@@ -35,6 +35,31 @@ namespace BIT706_A1_5045523_BinnyHira
 
         public override string Withdrawal(AAccounts selectedAcc, double withdrawlAmount)
         {
+
+            string str = "";
+            try
+            {
+                if (withdrawlAmount <= 0)
+                {
+                    throw new WithdrawalAmountIs0OrLessExpection("Withdrawal Failed - Amount cannot be less that or equal to 0");
+                }
+                else if (Balance < withdrawlAmount)
+                {
+                    //FailedFee = 10;
+                    Balance -= FailedFee;
+                    throw new NotEnoughMoneyInAccountException($"Withdrawal Failed - Not enough Money in Account\n" +
+                    $"Everyday Account {AccountNo}; Withdrawal Amount {withdrawlAmount}; Transaction Failed; Fee {FailedFee};  " +
+                    $"Balance ${Balance}");
+                }
+                else
+                {
+                    Balance -= withdrawlAmount;
+                    str = ($"Withdrawal Completed: {selectedAcc.ToString()}");
+                }
+            }
+            catch (Exception) { throw; } //throwing the exception to ShowAccounts form.
+            return str;
+            /*
             string str = "";
             if (withdrawlAmount > 0 && (Balance+OverdraftLimit) >= withdrawlAmount)
             {
@@ -53,7 +78,7 @@ namespace BIT706_A1_5045523_BinnyHira
                     $"Omni Account {AccountNo}; Withdrawl Amount {withdrawlAmount}; " +
                     $"Transaction Failed; Fee {FailedFee}; Overdraft Limit {OverdraftLimit}; Balance ${Balance}");
             }
-            return str;
+            return str;*/
         }
 
         public override string calculateInterest(AAccounts selectedAcc)
