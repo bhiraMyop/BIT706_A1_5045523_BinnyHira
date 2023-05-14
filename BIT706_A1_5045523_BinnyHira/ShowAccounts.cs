@@ -35,10 +35,10 @@ namespace BIT706_A1_5045523_BinnyHira
             {
                 if (acc.Customer.PersonID == SelectedCust.PersonID)
                 {
-                    lstAccounts.Items.Add(acc);                    
+                    lstAccounts.Items.Add(acc);
                 }
             }
-            
+
             //Select the first item
             lstAccounts.SelectedIndex = 0;
         }
@@ -62,6 +62,47 @@ namespace BIT706_A1_5045523_BinnyHira
         }
         private void withdrawButton_Click(object sender, EventArgs e)
         {
+            double dollarAmount;
+            try
+            {
+                //object.ReferenceEquals(null, selectedAcc);
+                if(SelectedAcc == null)
+                {
+                    throw new NoAccountSelectedException("ERROR! - No Account Selected.");
+                }
+                else if (string.IsNullOrEmpty(textBoxAmount.Text.ToString()) || textBoxAmount.Text.ToString() == " ")
+                {
+                    throw new NoAmountEnteredException("ERROR! - No amount Entered.");
+                }
+                else if (double.TryParse($"{textBoxAmount.Text.ToString()}", out dollarAmount) != true)
+                {
+                    throw new StringEnteredException("ERROR! - Cannot Enter Characters in Amount Box." +
+                        " Please only enter numbers.");
+                }
+                else
+                {
+                    double.TryParse(dollarAmount.ToString("N2"), out dollarAmount); //convert to 2 decimal places
+                    string str = SelectedAcc.withdrawl(SelectedAcc, dollarAmount);
+                    transactions.Add(str);
+                    WriteBinaryData();
+                    MessageBox.Show(str);
+                    btnRefresh2.PerformClick();
+                }
+            }
+            catch (NoAccountSelectedException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            catch(NoAmountEnteredException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            catch (StringEnteredException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+            /*
             if (SelectedAcc == null)
             {
                 MessageBox.Show("ERROR! - No Account Selected.");
@@ -72,19 +113,21 @@ namespace BIT706_A1_5045523_BinnyHira
             }
             else
             {
-                double dollarAmount = 0.0;
 
-                if (double.TryParse($"{textBoxAmount.Text.ToString()}", out dollarAmount))
-                {
-                   double.TryParse(dollarAmount.ToString("N2"), out dollarAmount); //convert to 2 decimal places
-                    string str = SelectedAcc.withdrawl(SelectedAcc, dollarAmount);
-                    transactions.Add(str);
-                    WriteBinaryData();
-                   MessageBox.Show(str);
-                   btnRefresh2.PerformClick();
-                }
+            dollarAmount = 0.0;
+
+            if (double.TryParse($"{textBoxAmount.Text.ToString()}", out dollarAmount))
+            {
+                double.TryParse(dollarAmount.ToString("N2"), out dollarAmount); //convert to 2 decimal places
+                string str = SelectedAcc.withdrawl(SelectedAcc, dollarAmount);
+                transactions.Add(str);
+                // WriteBinaryData();
+                MessageBox.Show(str);
+                btnRefresh2.PerformClick();
             }
+            */
         }
+    
 
         private void depositButton_Click(object sender, EventArgs e)
         {
@@ -170,4 +213,5 @@ namespace BIT706_A1_5045523_BinnyHira
         }
 
     }
+
 }
