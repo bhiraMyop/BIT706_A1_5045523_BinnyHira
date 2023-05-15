@@ -82,7 +82,7 @@ namespace BIT706_A1_5045523_BinnyHira
                 else
                 {
                     double.TryParse(dollarAmount.ToString("N2"), out dollarAmount); //convert to 2 decimal places
-                    string str = SelectedAcc.Withdrawal(SelectedAcc, dollarAmount);
+                    string str = SelectedAcc.withdrawal(SelectedAcc, dollarAmount);
                     transactions.Add(str);
                     WriteBinaryData();
                     MessageBox.Show(str);

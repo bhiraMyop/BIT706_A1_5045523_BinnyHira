@@ -16,4 +16,9 @@
     <PackageReference Include="coverlet.collector" Version="3.2.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\BIT706_A1_5045523_BinnyHira\BIT706_A1_5045523_BinnyHira.csproj" />
+    <ProjectReference Include="..\WindowsFormsControlLibrary1\WindowsFormsControlLibrary1.csproj" />
+  </ItemGroup>
+
 </Project>

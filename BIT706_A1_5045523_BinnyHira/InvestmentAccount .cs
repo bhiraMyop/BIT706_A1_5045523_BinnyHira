@@ -31,27 +31,27 @@ namespace BIT706_A1_5045523_BinnyHira
             return str;
         }
 
-        public override string Withdrawal(AAccounts selectedAcc, double withdrawlAmount)
+        public override string withdrawal(AAccounts selectedAcc, double withdrawlAmount)
         {
             string str = "";
             try
             {
                 if (withdrawlAmount <= 0)
                 {
-                    throw new WithdrawalAmountIs0OrLessExpection("Withdrawal Failed - Amount cannot be less that or equal to 0");
+                    throw new WithdrawalAmountIs0OrLessExpection("withdrawal Failed - Amount cannot be less that or equal to 0");
                 }
                 else if (Balance < withdrawlAmount)
                 {
                     //FailedFee = 10;
                     Balance -= FailedFee;
-                    throw new NotEnoughMoneyInAccountException($"Withdrawal Failed - Not enough Money in Account\n" +
-                    $"Everyday Account {AccountNo}; Withdrawal Amount {withdrawlAmount}; Transaction Failed; Fee {FailedFee};  " +
+                    throw new NotEnoughMoneyInAccountException($"withdrawal Failed - Not enough Money in Account\n" +
+                    $"Everyday Account {AccountNo}; withdrawal Amount {withdrawlAmount}; Transaction Failed; Fee {FailedFee};  " +
                     $"Balance ${Balance}");
                 }
                 else
                 {
                     Balance -= withdrawlAmount;
-                    str = ($"Withdrawal Completed: {selectedAcc.ToString()}");
+                    str = ($"withdrawal Completed: {selectedAcc.ToString()}");
                 }
             }
             catch (Exception) { throw; } //throwing the exception to ShowAccounts form.
