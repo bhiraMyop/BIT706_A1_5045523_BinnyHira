@@ -94,7 +94,7 @@ namespace BIT706_A1_5045523_BinnyHira
 
         public override string toStringListAccounts()
         {
-            string str = $"Everyday Account {AccountNo}; Failed Fee ${FailedFee}; Balance ${Balance}";
+            string str = $"Everyday Account {AccountNo}; InterestRate {InterestRate}%; Failed Fee ${FailedFee}; Balance ${Balance}";
             return str;
         }
     }
