@@ -206,6 +206,7 @@ namespace BIT706_A1_5045523_BinnyHira
         private void button2_Click(object sender, EventArgs e)
         {
             // Read Binary Data
+            transactionsLabel.Text = string.Empty;
             ReadBinaryData();
             showBinaryData();
         }
