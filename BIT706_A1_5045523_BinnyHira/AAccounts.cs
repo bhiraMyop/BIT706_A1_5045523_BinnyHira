@@ -38,16 +38,32 @@ namespace BIT706_A1_5045523_BinnyHira
         public AAccounts(Customer customer) : this()
         {
             Customer = customer;
+            if (customer.IsBanksstaff)
+            {
+                FailedFee = 10.00 / 2; //50% Discount 
+            }
+            else
+            {
+                FailedFee = 10.00;
+            }
         }
         //for Investment Account
         public AAccounts(double interestRate) : this()
         { 
             InterestRate = interestRate;
-            FailedFee = 10.00;
+            
         }
         public AAccounts(double interestRate, Customer customer) : this(interestRate)
         {
             Customer = customer;
+            if (customer.IsBanksstaff)
+            { 
+                FailedFee = 10.00 / 2; //50% Discount 
+            }
+            else
+            {
+                FailedFee = 10.00;
+            }
         }
         //For Omni Accounts
         public AAccounts(double interestRate, Customer customer, double overdraftLimit ) : this(interestRate, customer)

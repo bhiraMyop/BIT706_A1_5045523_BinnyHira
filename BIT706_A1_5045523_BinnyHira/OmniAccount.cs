@@ -105,7 +105,7 @@ namespace BIT706_A1_5045523_BinnyHira
         public override string toStringListAccounts()
         {
             string str = $"Omni Account {AccountNo}; InterestRate {InterestRate}%; Overdraft Limit ${OverdraftLimit}; " +
-                $"Failed Fee{FailedFee};  Balance ${Balance}";
+                $"Failed Fee ${FailedFee};  Balance ${Balance}";
             return str;
         }
     }
