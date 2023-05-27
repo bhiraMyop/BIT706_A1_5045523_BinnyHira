@@ -33,6 +33,7 @@ namespace BIT706_A1_5045523_BinnyHira
         {
             AccountNo = accountCounter;
             accountCounter++;
+            InterestRate = 4;
         }
         //for everyday account
         public AAccounts(Customer customer) : this()
@@ -49,9 +50,10 @@ namespace BIT706_A1_5045523_BinnyHira
         }
         //for Investment Account
         public AAccounts(double interestRate) : this()
-        { 
-            InterestRate = interestRate;
-            
+        {
+            //InterestRate = interestRate;
+            InterestRate = 4; 
+
         }
         public AAccounts(double interestRate, Customer customer) : this(interestRate)
         {
