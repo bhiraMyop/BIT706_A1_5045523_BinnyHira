@@ -10,7 +10,7 @@ namespace BIT706_A1_5045523_BinnyHira
     {
         // Constructors
         public InvestmentAccount(double interestRate, Customer customer) : base(interestRate, customer) 
-        {//intreset rate is set at account creation
+        {
             //Failed fee is standard $10.00
 
         }
